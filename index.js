@@ -7,6 +7,8 @@ const pokeApi = axios.create({
 function getPokemonInfo(id) {
 pokeApi.get(id)
 .then(response => {
+  document.getElementById("pokeInfo").innerText = response.data.name;
+  console.log(response.data.name);
   console.log(response.data)
 })
 .catch(err => {
@@ -15,5 +17,5 @@ pokeApi.get(id)
 }
 
 document.getElementById("pokeButton").onclick = function(){
-getPokemonInfo("1");
+getPokemonInfo("150");
 }
